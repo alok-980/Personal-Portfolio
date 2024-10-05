@@ -1,0 +1,33 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<link rel="stylesheet" href="/css/experience.css">
+
+<section class="experience-intro">
+    <h1>My Experience</h1>
+    <p>Explore my professional experience, projects, and contributions that have shaped my career:</p>
+</section>
+
+<section class="experience-timeline">
+    
+    <% experienceData.forEach(function(experience) { %>
+        <div class="experience-card">
+            <h3><%= experience.title %></h3>
+            <span class="experience-year"><%= experience.startYear %> - <%= experience.endYear %></span>
+            <p><b><%= experience.subtitle %></b></p>
+            <p><%= experience.description %></p>
+            
+            <!-- Delete Button with FontAwesome Icon -->
+            <form action="/experience/<%= experience._id %>?_method=DELETE" method="POST" class="delete-form">
+                <button type="submit" class="delete-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </form>
+        </div>
+    <% }) %>
+
+    <div class="add-experience">
+        <a href="/experience/new" class="add-experience-btn">
+            <i class="fa-regular fa-square-plus"></i> <!-- Font Awesome plus icon -->
+            Add Experience
+        </a>
+    </div>
+</section>

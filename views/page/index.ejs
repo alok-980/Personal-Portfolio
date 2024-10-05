@@ -1,0 +1,125 @@
+<% layout("/layouts/boilerplate.ejs") %>
+    <link rel="stylesheet" href="/css/index.css">
+
+    <body>
+        <section class="intro">
+            <div class="intro-content">
+                <% portfolioData.forEach(function(portfolio) { %>
+                <h1>Hi There, 
+                    <br> I'm 
+                    <span><%= portfolio.name %></span>
+                </h1>
+                <p>I Am a 
+                    <span><%= portfolio.title %></span>
+                </p>
+                <% }); %>
+                <a href="/about" class="about-button">About Me</a>
+                <div class="social-icons">
+                    <% contactData.forEach(function(contact){ %>
+                        <!-- linkedin -->
+                        <a href="<%= contact.linkedin %>"><i class="fab fa-linkedin"></i></a>
+
+                        <!-- github -->
+                        <a href="<%= contact.github %>"><i class="fab fa-github"></i></a>
+
+                        <!-- twitter -->
+                        <a href="<%= contact.twitter %>"><i class="fab fa-twitter"></i></a>
+
+                        <!-- telegram -->
+                        <a href="<%= contact.telegram %>"><i class="fab fa-telegram"></i></a>
+
+                        <!-- instagram -->
+                        <a href="<%= contact.instagram %>"><i class="fab fa-instagram"></i></a>
+                    <% }) %>
+                </div>
+            </div>
+            <div class="avatar">
+                <img src="img/favicon.png" alt="Avatar">
+            </div>
+        </section>
+
+        <section class="mern-developer">
+            <div class="mern-logos">
+                <img src="https://img.icons8.com/color/100/000000/mongodb.png" alt="MongoDB Logo">
+                <img src="https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg" alt="Express.js Logo">
+                <img src="https://img.icons8.com/color/100/000000/react-native.png" alt="React.js Logo">
+                <img src="https://img.icons8.com/color/100/000000/nodejs.png" alt="Node.js Logo">
+            </div>
+            <div class="mern-description">
+                <p>
+                    <% portfolioData.forEach(function(portfolio) { %>
+                        <%= portfolio.description %>
+                    <% }); %>
+                </p>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <div class="education-container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-timeline">
+                    <!-- BCA -->
+                    <% educationData.forEach(function(education) { %>
+                        <div class="education-item">
+                            <div class="education-content">
+                                <!-- Displaying the first degree from the education array -->
+                                <h3><%= education.qualification %></h3>
+                                <span class="education-year">
+                                    <p><%= education.startYear %> - <%= education.endYear %></p>
+                                </span>
+                                <p><%= education.institution %></p>
+                                <% if (education.grade) { %>
+                                    <p><strong>CGPA:</strong> <%= education.grade %></p>
+                                <% } %>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <div class="certifications-container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="certifications-timeline">
+                    <!-- Java with DSA Certification -->
+                    <% certificationData.forEach(function(certification) { %>
+                        <div class="certification-item" onclick="openModal('javaModal')">
+                            <h3><%= certification.title %></h3>
+                            <p><%= certification.issuer %></p>
+                            <span class="certification-year">
+                                <%= certification.year %>
+                            </span>
+                        </div>
+                    <% }); %>
+            </div>
+        </section>
+
+        <!-- Modal for Java with DSA Certification -->
+        <div id="javaModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('javaModal')">&times;</span>
+                <h2>Certification in (DSA with java)</h2>
+                <p>This certificate is awarded for completing the Data Structures and Algorithms with java course.</p>
+                <iframe src="/document/certificate-sigma-batch-dsa-662f9454b676a6f0bf0547cb.pdf" class="certificate-pdf"
+                    frameborder="0"></iframe>
+            </div>
+        </div>
+
+        <!-- Contact Me Section -->
+        <section id="contact">
+            <div class="contact-container">
+                <h2>Get In Touch</h2>
+                <p>I'd love to hear from you! Whether you have a question or just want to say hi, feel free to drop me a
+                    message below.</p>
+                <form class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </body>

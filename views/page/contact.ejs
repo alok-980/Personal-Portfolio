@@ -1,0 +1,25 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<link rel="stylesheet" href="/css/contact.css">
+
+<section class="contact-intro">
+    <h1>Get In Touch</h1>
+    <p>I'd love to hear from you! Whether you have a question or just want to say hi, feel free to drop me a message
+        below.</p>
+</section>
+
+<section class="contact-container">
+    <form class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+    <div class="contact-info">
+        <h3>Contact Details</h3>
+        <% contactData.forEach(function(contact){ %>
+            <p><i class="fas fa-map-marker-alt"></i> Address: <%= contact.address %></p>
+            <p><i class="fas fa-phone"></i> Phone: +91 <%= contact.phone %></p>
+            <p><i class="fas fa-envelope"></i> Email: <%= contact.email %></p>
+        <% }) %>
+    </div>
+</section>

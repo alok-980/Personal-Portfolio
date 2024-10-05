@@ -1,0 +1,73 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<link rel="stylesheet" href="/css/education.css">
+
+<section class="education-intro">
+    <h1>My Education</h1>
+    <p>Explore my educational journey and certifications in a detailed timeline view.</p>
+</section>
+
+<section class="timeline">
+    <!-- Education Timeline -->
+    <% educationData.forEach(function(education) { %>
+        <div class="timeline-item">
+            <div class="timeline-icon">
+                <i class="<%= education.icon %>"></i>
+            </div>
+            <div class="timeline-content">
+                <h3><%= education.qualification %></h3>
+                <p class="timeline-year"><%= education.startYear %> - <%= education.endYear %></p>
+                <p><%= education.institution %></p>
+                <% if (education.grade) { %>
+                    <p><strong>CGPA:</strong> <%= education.grade %></p>
+                <% } %>
+                <!-- Delete button -->
+                <form action="/education/<%= education._id %>?_method=DELETE" method="POST" class="delete-form">
+                    <button class="delete-btn" onclick="confirmDelete('<%= education._id %>')">
+                        <i class="fa-solid fa-trash-arrow-up"></i> <!-- Font Awesome trash icon -->
+                    </button>
+                </form>
+            </div>
+        </div>
+    <% }); %>
+    
+    <!-- Button to add new education -->
+    <div class="add-buttons">
+        <a href="/education/new" class="add-btn">Add New Education</a>
+    </div>
+
+    <!-- Certifications Timeline -->
+    <div class="certifications-title">
+        <h2>Certifications</h2>
+    </div>
+
+    <% certificationData.forEach(function(certification) { %>
+        <div class="timeline-item">
+            <div class="timeline-icon">
+                <i class="<%= certification.icon %>"></i>
+            </div>
+            <div class="timeline-content">
+                <h3><%= certification.title %></h3>
+                <p class="timeline-year"><%= certification.year %></p>
+                <p><%= certification.issuer %></p>
+                <form action="/certification/<%= certification._id %>?_method=DELETE" method="POST" class="delete-form" onsubmit="return confirm('Are you sure you want to delete this certification?');">
+                    <button type="submit" class="delete-btn">
+                        <i class="fa-solid fa-trash-arrow-up"></i> <!-- Font Awesome trash icon -->
+                    </button>
+                </form>                
+            </div>
+        </div>
+    <% }); %>
+    
+    <!-- Button to add new certification -->
+    <div class="add-buttons">
+        <a href="/education/certification" class="add-btn">Add New Certification</a>
+    </div>
+</section>
+
+<script>
+    function confirmDelete(id) {
+        if (confirm('Are you sure you want to delete this education entry?')) {
+            window.location.href = '/delete-education/' + id; // Adjust this route as necessary
+        }
+    }
+</script>

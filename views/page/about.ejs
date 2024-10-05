@@ -1,0 +1,41 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<link rel="stylesheet" href="/css/about.css">
+
+<section class="about-intro">
+    <h1>About Me</h1>
+    <div class="about-content">
+        <div class="about-description">
+            <p>Hello! I'm <strong>Alok Chauhan</strong>, a passionate web developer dedicated to building dynamic and responsive web applications. I hold a Bachelor of Computer Applications (BCA) from Manipal University Jaipur, where I developed a deep understanding of various web technologies.</p>
+            <p>I have hands-on experience in creating innovative projects that solve real-world problems. Some of the notable projects I've worked on include:</p>
+            <ul>
+                <li><strong>Video Calling Website:</strong> Developed a real-time video calling application that allows users to connect and communicate seamlessly.</li>
+                <li><strong>Zerodha-like Trading Platform:</strong> Built a user-friendly web application for trading and investment, inspired by Zerodha's functionalities.</li>
+                <li><strong>ChatGPT Clone:</strong> Created an AI-powered chatbot using natural language processing techniques to provide conversational experiences.</li>
+                <li><strong>Hotel Booking and Listing Website:</strong> Designed and developed a comprehensive platform for users to book hotels, manage listings, and explore various accommodation options.</li>
+            </ul>
+            <br><br>
+            <p>With a keen eye for detail and a commitment to quality, I strive to create engaging and efficient web applications that enhance user experience. I am constantly learning and adapting to the latest technologies to stay ahead in this ever-evolving field.</p>
+        </div>
+    </div>
+</section>
+
+<section class="skills-section">
+    <h2>My Skills</h2>
+    <div class="skills-container">
+
+        <% skillsData.forEach(function(skill) { %>
+            <div class="skill-item">
+                <i class="<%= skill.image %>"></i>
+                <h3><%= skill.title %></h3>
+                <p><%= skill.description %></p>
+            </div>
+        <% }); %>
+        
+    </div>
+</section>
+
+<section class="contact-section">
+    <h2>Get In Touch</h2>
+    <p>If you’d like to collaborate or have any questions, feel free to reach out!</p>
+    <a href="contact.html" class="contact-button">Contact Me</a>
+</section>

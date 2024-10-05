@@ -1,0 +1,124 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #ece9e9;
+}
+
+/* Container for the form */
+.container {
+    max-width: 500px; /* Adjust width for better presentation */
+    margin: 50px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    animation: fadeIn 0.5s ease; /* Animation for container */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Initial position */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Final position */
+    }
+}
+
+/* Title styling */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    animation: fadeIn 0.5s ease forwards 0.2s; /* Fade-in animation with delay */
+}
+
+/* Form styling */
+.education-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input fields */
+.form-group {
+    margin-bottom: 20px; /* Spacing between form elements */
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 2px solid #ccc; /* Thicker border for visibility */
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%; /* Full width for input fields */
+    opacity: 0; /* Initial opacity for fade-in */
+    transform: translateY(20px); /* Initial position */
+    animation: fadeIn 0.5s ease forwards; /* Animation for input fields */
+}
+
+input[type="text"]:focus {
+    border-color: #ff9900;
+    box-shadow: 0 0 5px rgba(255, 153, 0, 0.5);
+    outline: none;
+}
+
+/* Specific styles for Start Year and End Year to be in the same line */
+.start-end {
+    display: flex;
+    justify-content: space-between; /* Space between inputs */
+}
+
+.start-end div {
+    flex: 0 1 48%; /* Flex for equal width */
+}
+
+/* Submit button */
+.submit-btn {
+    padding: 12px;
+    background-color: #ff9900;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 18px; /* Increased font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    opacity: 0; /* Initial opacity for fade-in */
+    transform: translateY(20px); /* Initial position */
+    animation: fadeIn 0.5s ease forwards 0.8s; /* Animation for submit button with delay */
+}
+
+.submit-btn:hover {
+    background-color: #ff7700;
+    transform: translateY(-2px);
+}
+
+/* Cancel link */
+.cancel-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #555;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    opacity: 0; /* Initial opacity for fade-in */
+    transform: translateY(20px); /* Initial position */
+    animation: fadeIn 0.5s ease forwards 0.6s; /* Animation for cancel link with delay */
+}
+
+.cancel-link:hover {
+    color: #ff9900;
+    text-decoration: underline;
+}

@@ -1,0 +1,28 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<link rel="stylesheet" href="/css/new/newWork.css">
+
+<section class="new-work-form">
+    <h1>Add New Work</h1>
+    <form action="/work" method="POST">
+        <div class="form-group">
+            <label for="image">Project Image URL</label>
+            <input type="text" id="image" name="work[image]" placeholder="Enter Image URL (or leave blank for default)">
+        </div>
+
+        <div class="form-group">
+            <label for="title">Project Title</label>
+            <input type="text" id="title" name="work[title]" placeholder="Enter Project Title" required>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Project Description</label>
+            <textarea id="description" name="work[description]" rows="5" placeholder="Enter Project Description" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="submit-btn">
+                <i class="fa-solid fa-plus"></i> Add Work
+            </button>
+        </div>
+    </form>
+</section>

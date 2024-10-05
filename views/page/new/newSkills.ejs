@@ -1,0 +1,26 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<link rel="stylesheet" href="/css/new/newskills.css">
+
+<section class="new-skills-container">
+    <div class="new-skills-form-wrapper">
+        <h1>Add New Skills</h1>
+        <form action="/skills" method="POST" class="new-skills-form">
+            <div class="form-group">
+                <label for="icon">Icon Class</label>
+                <input type="text" id="icon" name="skills[image]" placeholder="fab fa-java" required>
+            </div>
+
+            <div class="form-group">
+                <label for="title">Skill Title</label>
+                <input type="text" id="title" name="skills[title]" placeholder="Enter skill title (e.g., Java)" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="skills[description]" placeholder="Enter skill description" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Add Skill</button>
+        </form>
+    </div>
+</section>

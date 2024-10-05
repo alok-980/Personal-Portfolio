@@ -1,0 +1,29 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<link rel="stylesheet" href="/css/skills.css">
+
+<section class="skills-intro">
+    <h1>My Skills</h1>
+    <p>As a web developer, I have honed various skills that enable me to create dynamic and responsive applications.
+        Below are some of my key skills:</p>
+</section>
+
+<section class="skills-container">
+    <% skillsData.forEach(function(skill) { %>
+        <div class="skill-card">
+            <i class="<%= skill.image %> icon"></i>
+            <h3><%= skill.title %></h3>
+            <p><%= skill.description %></p>  
+            
+            <!-- Delete Button with FontAwesome Icon -->
+            <form action="/skills/<%= skill._id %>?_method=DELETE" method="POST" class="delete-form">
+                <button type="submit" class="delete-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </form>
+        </div>
+    <% }); %>
+
+    <form action="/skills/new" method="GET">
+        <button class="add-skill-btn">Add new skills</button>
+    </form>
+</section>

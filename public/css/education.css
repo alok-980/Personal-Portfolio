@@ -1,0 +1,225 @@
+/* Intro Section */
+.education-intro {
+    text-align: center;
+    padding: 60px 10%;
+    background: linear-gradient(to right, #ff9900, #ffcc00);
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    opacity: 0; /* Initial opacity for fade-in */
+    transform: translateY(20px); /* Initial position for slide-in */
+    animation: fadeInUp 0.5s forwards; /* Faster fade-in and slide-up animation */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.education-intro h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    opacity: 0; /* Initial opacity for fade-in */
+    transform: translateY(20px); /* Initial position for slide-in */
+    animation: fadeInUp 0.5s forwards 0.1s; /* Faster fade-in and slide-up animation with shorter delay */
+}
+
+.education-intro p {
+    font-size: 20px;
+    line-height: 1.6;
+    opacity: 0; /* Initial opacity for fade-in */
+    transform: translateY(20px); /* Initial position for slide-in */
+    animation: fadeInUp 0.5s forwards 0.2s; /* Faster fade-in and slide-up animation with shorter delay */
+}
+
+/* Timeline Section */
+.timeline {
+    padding: 50px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+    width: 80%;
+    opacity: 0; /* Initial opacity for fade-in */
+    transform: translateY(20px); /* Initial position for slide-in */
+    animation: fadeInUp 0.5s forwards; /* Faster fade-in and slide-up animation */
+    animation-delay: var(--animation-delay); /* Delay based on index */
+}
+
+.timeline-item:nth-child(odd) {
+    justify-content: flex-start;
+    --animation-delay: 0.2s; /* Faster delay for odd items */
+}
+
+.timeline-item:nth-child(even) {
+    justify-content: flex-end;
+    --animation-delay: 0.4s; /* Faster delay for even items */
+}
+
+.timeline-icon {
+    background-color: #ff9900;
+    color: #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin-right: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-content {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    text-align: left;
+    position: relative;
+}
+
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #fff;
+}
+
+.timeline-year {
+    font-size: 16px;
+    color: #ff9900;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Certifications Section */
+.certifications-title {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: #333;
+    opacity: 0; /* Initial opacity for fade-in */
+    transform: translateY(20px); /* Initial position for slide-in */
+    animation: fadeInUp 0.5s forwards 0.6s; /* Faster fade-in and slide-up animation with shorter delay */
+}
+
+.certification-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px 30px;
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    transition: transform 0.3s;
+    opacity: 0; /* Initial opacity for fade-in */
+    transform: translateY(20px); /* Initial position for slide-in */
+    animation: fadeInUp 0.5s forwards; /* Faster fade-in and slide-up animation */
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+}
+
+.certification-year {
+    display: block;
+    font-size: 16px;
+    color: #ff9900;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Add button styles */
+.add-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons */
+    margin: 20px 0; /* Space around buttons */
+}
+
+.add-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #ff9900; /* Button color */
+    color: #fff; /* Text color */
+    text-decoration: none; /* No underline */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animation effects */
+    margin: 0 10px; /* Margin between buttons */
+    opacity: 0; /* Initial opacity for fade-in */
+    transform: translateY(20px); /* Initial position for slide-in */
+    animation: fadeInUp 0.5s forwards; /* Faster fade-in and slide-up animation */
+}
+
+.add-btn:hover {
+    background-color: #ff7700; /* Darker color on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+/* Timeline Section */
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+    width: 80%;
+}
+
+/* Timeline Content */
+.timeline-content {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Delete button styles */
+.delete-btn {
+    position: absolute;
+    top: 10px; /* Adjust position as needed */
+    right: 10px; /* Adjust position as needed */
+    color: #ff7700;
+    border: none;
+    border-radius: 50%; /* Make the button circular */
+    width: 40px; /* Button size */
+    height: 40px; /* Button size */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0; /* Start invisible */
+    transform: scale(0.8); /* Start smaller */
+    transition: opacity 0.4s ease 0.2s, transform 0.4s ease 0.2s; /* Animation effects with delay */
+}
+
+/* Show the delete button on hover */
+.timeline-item:hover .delete-btn {
+    display: flex; /* Show button on hover */
+    opacity: 1; /* Fade in */
+    transform: scale(1); /* Scale to normal size */
+}
+
+/* Button hover effect */
+.delete-btn:hover {
+    background-color: #ff77005b; /* Darker red on hover */
+    transform: scale(1.1); /* Slightly enlarge button on hover */
+}
+
+/* Font Awesome icon */
+.delete-btn i {
+    font-size: 16px; /* Adjust icon size */
+}

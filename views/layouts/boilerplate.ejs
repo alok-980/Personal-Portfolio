@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alok Chauhan</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="/"><img src="img/logo.png" alt="Alok Logo"></a>
+            </div>
+            <div>
+                <ul class="nav-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/skills">Skills</a></li>
+                    <li><a href="/education">Education</a></li>
+                    <li><a href="/work">Work</a></li>
+                    <li><a href="/experience">Experience</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <%- body %>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="/img/logo.png" alt="Logo">
+                <h2>Alok Chauhan</h2>
+            </div>
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/about">About</a>
+                <a href="/skills">Skills</a>
+                <a href="/work">Work</a>
+                <a href="/contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <% contactData.forEach(function(contact){ %>
+                    <!-- linkedin -->
+                    <a href="<%= contact.linkedin %>"><i class="fab fa-linkedin"></i></a>
+
+                    <!-- github -->
+                    <a href="<%= contact.github %>"><i class="fab fa-github"></i></a>
+
+                    <!-- twitter -->
+                    <a href="<%= contact.twitter %>"><i class="fab fa-twitter"></i></a>
+
+                    <!-- instagram -->
+                    <a href="<%= contact.instagram %>"><i class="fab fa-instagram"></i></a>
+                <% }) %>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2024 Alok Chauhan. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/funcationality/script.js"></script>
+</body>
+
+</html>

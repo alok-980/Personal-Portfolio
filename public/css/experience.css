@@ -1,0 +1,119 @@
+/* Intro Section */
+.experience-intro {
+    text-align: center;
+    padding: 60px 10%;
+    background: linear-gradient(to right, #ff9900, #ffcc00);
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.experience-intro h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.experience-intro p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* Experience Timeline Section */
+.experience-timeline {
+    padding: 50px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Experience Card */
+.experience-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    transition: transform 0.3s, box-shadow 0.3s; /* Added box-shadow transition */
+}
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}
+
+/* Year and Description Styles */
+.experience-year {
+    display: block;
+    font-size: 16px;
+    color: #ff9900;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Add Experience Section */
+.add-experience {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Add Experience Button */
+.add-experience-btn {
+    display: inline-block;
+    background-color: #ff9900; /* Matches the page color theme */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-experience-btn i {
+    margin-right: 8px;
+}
+
+.add-experience-btn:hover {
+    background-color: #ff7300; /* Darken on hover */
+    transform: translateY(-2px); /* Subtle hover effect */
+}
+
+/* Delete Button - Initially Hidden */
+.delete-btn {
+    opacity: 0; /* Start hidden */
+    pointer-events: none; /* Prevent interaction when hidden */
+    background-color: #fff; /* Background color of the button */
+    border: none;
+    color: #ff7700; /* Icon color */
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1em;
+    border-radius: 50%; /* Make it circular */
+    width: 30px; /* Width of the circular button */
+    height: 30px; /* Height of the circular button */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    box-shadow: 0 4px 10px #ff770078; /* Shadow effect */
+    transition: opacity 0.5s ease, color 0.3s ease, transform 0.3s ease; /* Add transform for scale effect */
+}
+
+/* Show delete button on card hover with a delay */
+.experience-card:hover .delete-btn {
+    opacity: 1; /* Fully visible */
+    pointer-events: auto; /* Allow interaction */
+    transition-delay: 0.2s; /* Delay before appearing */
+}
+
+/* Change color on hover */
+.delete-btn:hover {
+    color: #ff7700; /* Icon color on hover */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+}
+
+.delete-btn i {
+    pointer-events: none; /* Prevent click on the icon, only the button */
+}

@@ -1,0 +1,101 @@
+/* Applying the color theme and animation consistent with the overall site */
+body {
+    background-color: #f0f4f8; /* Matching the portfolio background color */
+}
+
+.new-work-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 40px;
+    background-color: #ffffff; /* Clean white background for the form */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+}
+
+.new-work-form h1 {
+    text-align: center;
+    color: #333; /* Dark theme color */
+    margin-bottom: 30px;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.new-work-form h1::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background-color: #ff9900; /* Accent color */
+    display: block;
+    margin: 10px auto 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #ff9900;
+    box-shadow: 0 0 8px rgba(255, 153, 0, 0.2); /* Focus effect */
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+/* Submit button styling consistent with the site's theme */
+.submit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff9900; /* Primary button color */
+    color: #fff;
+    font-size: 16px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+}
+
+.submit-btn i {
+    margin-right: 10px;
+}
+
+/* Button hover effects */
+.submit-btn:hover {
+    background-color: #ff8400; /* Darker button color on hover */
+    transform: translateY(-5px); /* Hover lift animation */
+}
+
+/* Animation for the form */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

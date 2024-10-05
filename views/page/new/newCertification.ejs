@@ -1,0 +1,28 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<link rel="stylesheet" href="/css/new/newCertification.css">
+
+<section class="certification-form-container">
+    <h1>Add New Certification</h1>
+    <form action="/certification" method="POST" class="certification-form">
+        <div class="form-group">
+            <label for="icon">Icon (optional)</label>
+            <input type="text" id="icon" name="certification[icon]" placeholder="Enter icon link">
+        </div>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="certification[title]" placeholder="Enter certification title" required>
+        </div>
+        <div class="form-group">
+            <label for="year">Year</label>
+            <input type="text" id="year" name="certification[year]" placeholder="Enter year" required>
+        </div>
+        <div class="form-group">
+            <label for="issuer">Issuer</label>
+            <input type="text" id="issuer" name="certification[issuer]" placeholder="Enter issuer" required>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="submit-btn">Add Certification</button>
+            <a href="/education" class="cancel-link">Cancel</a>
+        </div>
+    </form>
+</section>

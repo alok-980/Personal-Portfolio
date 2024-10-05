@@ -1,0 +1,30 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<link rel="stylesheet" href="/css/work.css">
+
+<section class="work-intro">
+    <h1>My Work</h1>
+    <p>Here are some of the projects I've worked on, showcasing my skills and creativity:</p>
+</section>
+
+<section class="work-container">
+    <% workData.forEach(function(work) { %>
+        <div class="work-card">
+            <img src="<%= work.image %>" alt="Project Image" class="work-image">
+            <h3><%= work.title %></h3>
+            <p><%= work.description %></p>
+            
+            <!-- Delete Button Form -->
+            <form action="/work/<%= work._id %>?_method=DELETE" method="POST" class="delete-form">
+                <button type="submit" class="delete-btn">
+                    Remove Project <!-- Font Awesome trash icon -->
+                </button>
+            </form>
+        </div>
+    <% }) %>
+    
+    <div class="add-work">
+        <a href="/work/new" class="add-work-btn">
+            <i class="fa-regular fa-square-plus"></i> <!-- Font Awesome plus icon -->
+        </a>
+    </div>
+</section>

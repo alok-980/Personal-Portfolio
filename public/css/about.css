@@ -1,0 +1,91 @@
+.about-intro {
+    padding: 60px 9%;
+    background: linear-gradient(to right, #ff9900, #ffcc00);
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.about-intro h1 {
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.about-intro p {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.skills-section {
+    padding: 50px 10%;
+    text-align: center;
+}
+
+.skills-section h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.skill-item {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-item i {
+    font-size: 40px;
+    color: #ff9900;
+    margin-bottom: 10px;
+}
+
+.skill-item h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.contact-section {
+    text-align: center;
+    padding: 50px 10%;
+    background-color: #ff9900;
+    color: #fff;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    margin-bottom: 20px;
+}
+
+.contact-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #ff7800;
+}

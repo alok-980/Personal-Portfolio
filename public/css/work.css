@@ -1,0 +1,101 @@
+/* Existing Work Intro and Card Styles */
+.work-intro {
+    text-align: center;
+    padding: 80px 10%;
+    background: linear-gradient(to right, #ff9900, #ffcc00);
+    color: #fff;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.work-intro h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.work-intro p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.work-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 50px 10%;
+    gap: 20px;
+}
+
+.work-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; /* Relative for positioning delete button */
+}
+
+.work-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Image and Text Styling */
+.work-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.work-card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.work-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Add Work Button */
+.add-work i {
+    margin-top: 200px;
+    margin-left: 30px;
+    color: #ff9900;
+    font-size: 50px;
+    background-color: #dce5e96a;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 2px solid #ff9900;
+}
+
+/* Delete Button - Initially Hidden */
+.delete-form {
+    position: relative;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease, box-shadow 0.5s ease; /* Smooth transition */
+    margin-top: 10px;
+}
+
+/* Show Button on Hover */
+.work-card:hover .delete-form {
+    opacity: 1; /* Visible when hovering over the card */
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);  */
+}
+
+/* Delete Button Styling */
+.delete-btn {
+    background-color: #ff9900;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #ff7700;
+    box-shadow: 0 4px 10px rgba(255, 0, 0, 0.3); /* Hover shadow effect */
+}
